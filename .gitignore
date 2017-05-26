@@ -1,11 +1,6 @@
-# Java class files
-*.class
-
 # Intellij project files
 *.iml
-*.ipr
 *.iws
 .idea/
-
 target/
 tomcat.8080/

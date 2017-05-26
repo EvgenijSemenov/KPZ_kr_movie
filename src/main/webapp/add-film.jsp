@@ -6,7 +6,6 @@
         <script src="../js/bootstrap.min.js"></script>
     </head>
     <body>
-        <fmt:requestEncoding value = "UTF-8" />
         <div class="row">
             <nav class="navbar navbar-inverse">
                 <div class="col-md-3 col-md-offset-1">
@@ -21,7 +20,7 @@
             </nav>
         </div>
         <div class="container">
-            <form action="/film" method="post"  role="form" data-toggle="validator" >
+            <form action="/film" method="post"  role="form">
                 <h2>Додати фільм</h2>
                 <div class="form-group">
                     <label for="name" class="control-label col-xs-4">Ім'я:</label>
@@ -48,14 +47,6 @@
                     <button type="submit" class="btn btn-primary btn-md pull-right">Додати</button>
                 </div>
             </form>
-        </div>
-
-        <div class="row">
-            <div class="panel panel-default col-md-10 col-md-offset-1">
-                <div class="panel-body">
-                    <center>Курсова робота з дисципліни «Конструювання програмного забезпечення». Виконав студент 3-го курсу, групи ЗПЗ-144, Семенов Є.В.</center>
-                </div>
-            </div>
         </div>
     </body>
 </html>

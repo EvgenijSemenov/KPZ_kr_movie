@@ -1,5 +1,7 @@
 package model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 
@@ -19,6 +21,7 @@ public class Film {
     @Column(name = "age_limit")
     private String ageLimit;
     @Column(name = "description")
+    @Type(type="org.hibernate.type.StringClobType")
     private String description;
     @Column(name = "poster_url")
     private String posterUrl;

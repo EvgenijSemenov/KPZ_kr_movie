@@ -1,5 +1,7 @@
 package servlet;
 
+import dao.FilmDAO;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "AddFilmServlet",
-        urlPatterns = {"/film/add"}
+        name = "IndexServlet",
+        urlPatterns = {""}
 )
-public class AddFilmServlet extends HttpServlet {
+public class IndexServlet extends HttpServlet {
+
+    FilmDAO filmDAO = new FilmDAO();
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nextJSP = "/add-film.jsp";
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String nextJSP = "/index.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
+        req.setAttribute("filmList", filmDAO.filmList());
         dispatcher.forward(req, resp);
     }
+
 }
