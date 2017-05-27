@@ -4,7 +4,7 @@ import model.Film;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import utils.HibernateConnector;
+import hibernate.HibernateConnector;
 
 import java.util.List;
 

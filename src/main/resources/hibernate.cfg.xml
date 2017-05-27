@@ -7,9 +7,10 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">123456</property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <property name="hibernate.connection.charSet">UTF-8</property>
 
         <mapping class="model.Film" />
+        <mapping class="model.FilmComment" />
     </session-factory>
 </hibernate-configuration>

@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-4">
             <ul class="nav navbar-nav">
-                <li><a href="#">Головна</a></li>
+                <li><a href="/">Головна</a></li>
                 <li><a href="#">Сеанси</a></li>
             </ul>
         </div>
