@@ -10,7 +10,7 @@
 
         <div class="panel-body">
             <label for="name" class="control-label col-xs-4">Ім'я:</label>
-            <input type="text" name="name" id="name" class="form-control" value="${employee.name}" placeholder="Пірати Карибського моря: Помста Салазара" required="true"/>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Пірати Карибського моря: Помста Салазара" required="true"/>
 
             <label for="director" class="control-label col-xs-4">Режисер:</label>
             <input type="text" name="director" id="director" class="form-control" placeholder="Хоакім Роннінґ,	Еспен Сандберґ" required="true"/>

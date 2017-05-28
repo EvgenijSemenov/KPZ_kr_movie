@@ -4,7 +4,15 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="/film/add">Додати фільм</a>
+            <div class="col-md-2">
+                <a href="/film/add">Додати фільм</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/hall/add">Додати зал</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/session/add">Додати сесію</a>
+            </div>
         </div>
     </div>
 </div>

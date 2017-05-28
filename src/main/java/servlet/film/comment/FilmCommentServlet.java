@@ -1,9 +1,9 @@
-package servlet;
+package servlet.film.comment;
 
 import dao.FilmCommentDAO;
 import dao.FilmDAO;
-import model.Film;
-import model.FilmComment;
+import entity.Film;
+import entity.FilmComment;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

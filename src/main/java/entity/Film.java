@@ -1,11 +1,9 @@
-package model;
+package entity;
 
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 @Entity
@@ -31,8 +29,9 @@ public class Film implements Serializable {
     @Column(name = "trailer_url")
     private String trailerUrl;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "film", cascade = CascadeType.ALL)
-    //@JoinColumn(name = "comment", referencedColumnName = "id")
     private List<FilmComment> filmCommentList;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "film", cascade = CascadeType.ALL)
+    private List<FilmSession> filmSessions;
 
     public Film() {}
 
@@ -106,5 +105,13 @@ public class Film implements Serializable {
 
     public void setFilmCommentList(List<FilmComment> filmCommentList) {
         this.filmCommentList = filmCommentList;
+    }
+
+    public List<FilmSession> getFilmSessions() {
+        return filmSessions;
+    }
+
+    public void setFilmSessions(List<FilmSession> filmSessions) {
+        this.filmSessions = filmSessions;
     }
 }

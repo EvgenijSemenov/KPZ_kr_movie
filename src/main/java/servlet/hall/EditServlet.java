@@ -1,4 +1,6 @@
-package servlet;
+package servlet.hall;
+
+import dao.FilmHallDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,13 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "AddFilmServlet",
-        urlPatterns = {"/film/add"}
+        name = "EditServlet",
+        urlPatterns = {"/hall/edit/*"}
 )
-public class AddFilmServlet extends HttpServlet {
+public class EditServlet extends HttpServlet{
+    FilmHallDAO filmHallDAO = new FilmHallDAO();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nextJSP = "/add-film.jsp";
+        String pathInfo = req.getPathInfo();
+        String[] pathParts = pathInfo.split("/");
+        String part1 = pathParts[1];
+        int hallId = Integer.parseInt(part1);
+
+        req.setAttribute("filmHall", filmHallDAO.findFilmHallById(hallId));
+
+        String nextJSP = "/edit-film-hall.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
         dispatcher.forward(req, resp);
     }

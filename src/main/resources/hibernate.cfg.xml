@@ -10,7 +10,9 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <property name="hibernate.connection.charSet">UTF-8</property>
 
-        <mapping class="model.Film" />
-        <mapping class="model.FilmComment" />
+        <mapping class="entity.Film" />
+        <mapping class="entity.FilmComment" />
+        <mapping class="entity.FilmHall" />
+        <mapping class="entity.FilmSession" />
     </session-factory>
 </hibernate-configuration>

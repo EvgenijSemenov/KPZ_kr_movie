@@ -1,6 +1,6 @@
 package dao;
 
-import model.Film;
+import entity.Film;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

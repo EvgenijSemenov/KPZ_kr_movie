@@ -1,9 +1,8 @@
-package servlet;
+package servlet.film;
 
 import dao.FilmDAO;
-import model.Film;
+import entity.Film;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,27 +12,10 @@ import java.io.IOException;
 
 @WebServlet(
         name = "FilmServlet",
-        urlPatterns = {"/film/*"}
+        urlPatterns = {"/film"}
 )
-public class FilmDetailsServlet extends HttpServlet {
+public class FilmServlet extends HttpServlet {
     FilmDAO filmDAO = new FilmDAO();
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String pathInfo = req.getPathInfo(); // /{value}/test
-        String[] pathParts = pathInfo.split("/");
-        String part1 = pathParts[1];
-        int filmId = Integer.parseInt(part1);
-        if (filmDAO.findFilmById(filmId) != null) {
-            String nextJSP = "/film-details.jsp";
-            RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
-            req.setAttribute("film", filmDAO.findFilmById(filmId));
-            dispatcher.forward(req, resp);
-        } else {
-            String nextJSP = "/";
-            resp.sendRedirect(nextJSP);
-        }
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -1,8 +1,7 @@
 package dao;
 
 import hibernate.HibernateConnector;
-import model.Film;
-import model.FilmComment;
+import entity.FilmComment;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
