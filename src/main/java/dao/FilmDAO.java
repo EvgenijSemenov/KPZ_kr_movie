@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Film;
+import entity.FilmHall;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -60,6 +61,24 @@ public class FilmDAO {
             } else {
                 return (Film) queryList.get(0);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    public Film updateFilm(Film film) {
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateConnector.getInstance().getSession();
+            System.out.println("session : "+session);
+            transaction = session.beginTransaction();
+            session.update(film);
+            transaction.commit();
+            return film;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

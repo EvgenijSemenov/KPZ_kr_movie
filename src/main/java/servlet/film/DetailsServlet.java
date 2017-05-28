@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "FilmServlet",
+        name = "DetailsFilmServlet",
         urlPatterns = {"/film/*"}
 )
 public class DetailsServlet extends HttpServlet {
@@ -25,7 +25,7 @@ public class DetailsServlet extends HttpServlet {
         String part1 = pathParts[1];
         int filmId = Integer.parseInt(part1);
         if (filmDAO.findFilmById(filmId) != null) {
-            String nextJSP = "/film-details.jsp";
+            String nextJSP = "/jsp/film/details.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
             req.setAttribute("film", filmDAO.findFilmById(filmId));
             dispatcher.forward(req, resp);

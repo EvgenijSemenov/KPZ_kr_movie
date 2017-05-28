@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "EditServlet",
+        name = "EditHallServlet",
         urlPatterns = {"/hall/edit/*"}
 )
 public class EditServlet extends HttpServlet{
@@ -26,7 +26,7 @@ public class EditServlet extends HttpServlet{
 
         req.setAttribute("filmHall", filmHallDAO.findFilmHallById(hallId));
 
-        String nextJSP = "/edit-film-hall.jsp";
+        String nextJSP = "/jsp/hall/edit.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
         dispatcher.forward(req, resp);
     }

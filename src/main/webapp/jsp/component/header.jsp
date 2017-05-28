@@ -2,7 +2,7 @@
 <div class="row">
     <nav class="navbar navbar-inverse">
         <div class="col-md-2 col-md-offset-2">
-            <img alt="Logo" src="/images/logo.png">
+            <img alt="Logo" src="/resources/images/logo.png">
         </div>
         <div class="col-md-4">
             <h2 class="text-primary">Багатозальний кінотеатр</h2>

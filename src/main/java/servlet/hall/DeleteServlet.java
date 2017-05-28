@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "DeleteServlet",
+        name = "DeleteHallServlet",
         urlPatterns = {"/hall/delete/*"}
 )
 public class DeleteServlet extends HttpServlet {

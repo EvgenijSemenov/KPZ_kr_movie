@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "HallServlet",
+        name = "HallHallServlet",
         urlPatterns = {"/hall"}
 )
 public class HallServlet extends HttpServlet {
@@ -33,7 +33,7 @@ public class HallServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nextJSP = "/film-hall.jsp";
+        String nextJSP = "/jsp/hall/details.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
         req.setAttribute("filmHallList", filmHallDAO.filmHallList());
         dispatcher.forward(req, resp);

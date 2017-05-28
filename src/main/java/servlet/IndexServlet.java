@@ -21,10 +21,12 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String nextJSP = "/index.jsp";
-        RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
         req.setAttribute("filmList", filmDAO.filmList());
-        dispatcher.forward(req, resp);
+
+        getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(req, resp);
+//        String nextJSP = "/index.jsp";
+//        RequestDispatcher dispatcher = req.getRequestDispatcher(nextJSP);
+//        dispatcher.forward(req, resp);
     }
 
 }

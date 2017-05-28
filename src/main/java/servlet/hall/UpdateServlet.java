@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        name = "UpdateServlet",
+        name = "UpdateHallServlet",
         urlPatterns = {"/hall/update"}
 )
 public class UpdateServlet extends HttpServlet{
