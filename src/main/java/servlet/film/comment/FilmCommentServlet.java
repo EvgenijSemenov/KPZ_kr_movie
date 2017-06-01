@@ -33,7 +33,7 @@ public class FilmCommentServlet extends HttpServlet {
 
         filmCommentDAO.addFilmComment(filmComment);
 
-        String nextJSP = "/film/" + req.getParameter("filmId");
+        String nextJSP = "/film/details/" + req.getParameter("filmId");
         resp.sendRedirect(nextJSP);
     }
 }

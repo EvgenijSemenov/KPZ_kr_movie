@@ -5,7 +5,7 @@
     <c:forEach items="${filmList}" var="film">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <a class="panel-title" href="/film/${film.id}">${film.name}</a>
+                <a class="panel-title" href="/film/details/${film.id}">${film.name}</a>
             </div>
             <div class="panel-body">
                 <div class="col-md-2">
@@ -23,6 +23,9 @@
                     </div>
                     <div class="col-md-12">
                         <p>${fn:substring(film.description, 0, 300)}${fn:length(film.description) > 300 ? "..." : ""}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Коментарів:</strong> ${fn:length(film.filmCommentList)}</p>
                     </div>
                 </div>
             </div>

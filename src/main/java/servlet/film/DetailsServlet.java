@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(
         name = "DetailsFilmServlet",
-        urlPatterns = {"/film/*"}
+        urlPatterns = {"/film/details/*"}
 )
 public class DetailsServlet extends HttpServlet {
     FilmDAO filmDAO = new FilmDAO();

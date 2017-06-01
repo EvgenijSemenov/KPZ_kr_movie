@@ -4,7 +4,11 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">${film.name}</h3>
+            <h3 class="panel-title">
+                ${film.name}
+            </h3>
+            <a href="/film/edit/${film.id}">Редагувати </a>
+            <a href="/film/delete/${film.id}"> Видалити</a>
         </div>
         <div class="panel-body">
             <div class="col-md-2">

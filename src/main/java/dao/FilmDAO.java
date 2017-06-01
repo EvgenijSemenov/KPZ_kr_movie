@@ -86,4 +86,23 @@ public class FilmDAO {
             session.close();
         }
     }
+
+    public Film deleteFilmById(int id) {
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateConnector.getInstance().getSession();
+            System.out.println("session : "+session);
+            transaction = session.beginTransaction();
+            Film film = (Film)session.get(Film.class, id);
+            session.delete(film);
+            transaction.commit();
+            return film;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
 }
